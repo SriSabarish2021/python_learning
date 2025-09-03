@@ -440,26 +440,321 @@ import random
 # num=1
 # get_vr=print('hello') if num==2 else print('no') if num==4 else print('hey...')
 
-day_inp=''
+# day_inp=''
 
-def get_day_func():
-    global day_inp
-    day_inp=input('Enter the day : ').lower()
-    match day_inp:
-        case 'monday':
-            print('Bad day')
-        case 'tuesday':
-            print('Almost Gooder one')
-        case 'wednesday' | 'thursday':
-            print('Best day')
-        case 'friday' | 'saturday':
-            print('great day')
-        case 'sunday':
-            print('rest day')
-        case _:
+# def get_day_func():
+#     global day_inp
+#     day_inp=input('Enter the day : ').lower()
+#     match day_inp:
+#         case 'monday':
+#             print('Bad day')
+#         case 'tuesday':
+#             print('Almost Gooder one')
+#         case 'wednesday' | 'thursday':
+#             print('Best day')
+#         case 'friday' | 'saturday':
+#             print('great day')
+#         case 'sunday':
+#             print('rest day')
+#         case _:
 
-            print('Enter valid day')
-            return get_day_func()
+#             print('Enter valid day')
+#             return get_day_func()
   
-get_day_func()
+# get_day_func()
 
+
+
+#PROGRAMMS OF GAME
+
+#BANKING PROGRAM
+
+# import argparse
+# import sys
+# parser=argparse.ArgumentParser(
+#     description="Getting Name of the User"
+# )
+# parser.add_argument(
+#     '-n','--name',metavar='name',
+#     required=True
+# )
+# get_name=parser.parse_args()
+# user_name=get_name.name
+
+# bank_balance=0
+# def banking_programm():
+#     global bank_balance
+#     print("Banking Programm".center(40,'*'))
+#     print('')
+#     print(f"Hello.. {user_name} welcome to our CODE bank")
+#     print('')
+#     print('Select the required Services Number(1,2,3,4)\nMentioned Below : ')
+#     print('****************')
+#     print('1:Bank Balance')
+#     print('2:Deposite')
+#     print('3:Withddrawl')
+#     print('4:EXIST')
+#     print('****************')
+#     get_user_inp=input('Enter the required Service Number : ')
+
+#     match get_user_inp:
+#         case '1':
+#             print(f"Your Account Balance is : {bank_balance:.2f}")
+#             return banking_programm()
+#         case '2':
+#             get_amt_for_DEPO=int(input("Enter AMT to Deposite : "))
+#             bank_balance+=get_amt_for_DEPO
+#             print(f"The Amount of {get_amt_for_DEPO:.2f} is Deposited to your Account Succesfully....")
+#             print('')
+#             print(f'Current Balance : {bank_balance:.2f}')
+#             return banking_programm()
+#         case '3':
+#             if bank_balance==0:
+#                 print('')
+#                 print('Please Deposite an Amount to Withdrawl')
+#                 print('')
+#                 return banking_programm()
+             
+#             get_amt_for_withdrwl=int(input("Enter AMT to Withdrawl : "))
+#             if get_amt_for_withdrwl>bank_balance:
+#                 print('')
+#                 print('Balance in Your Account is low to withdrawl')
+#                 print('')
+#                 print(f'Current Balance : {bank_balance:.2f}')
+#                 print('')
+#                 print(f'Withdrawl AMT : {get_amt_for_withdrwl:.2f}')
+#                 return banking_programm()
+#             else:                  
+#                 bank_balance-=get_amt_for_withdrwl
+#                 print(f"The Amount of {get_amt_for_withdrwl:.2f} is Withdrawl from your Account Succesfully....")
+#                 print('')
+#                 print(f'Current Balance : {bank_balance:.2f}')
+#                 return banking_programm()
+#         case _:
+#             print('****************')
+#             print('')
+#             sys.exit('Thank You for an Member in CODE Bank')
+#             print('')
+#             print('****************')
+            
+
+
+# banking_programm()
+
+
+#Slot Machine Game 
+import random
+# game_balance=0
+# def Slot_Game():
+#     global game_balance
+#     print("SloTgaMe".center(50,'*'))
+#     print('')
+#     print(f'Hello.. {user_name} Welcome to the Slot Game...')
+#     print('')
+#     print('Enter the initial Amount to start the Game (Minimal Deposite : 50)')
+#     print('')
+#     def amt_deposite():
+#         get_amt=int(input('Initial Deposite : '))
+#         if get_amt<50:
+#             print(f'Minimal Deposite is 50 but your Entered AMT is {get_amt:.2f}')
+#             return amt_deposite()
+#         else:
+#             return get_amt
+    
+#     game_balance+=int(amt_deposite())
+
+#     def main_slot_flow_game():
+#         global game_balance
+#         if int(game_balance)==0 or int(game_balance)<0:
+            
+#             print('***********')
+#             print(f'The Balance in your Account is : {game_balance:.2f}')
+#             print('***********')
+#             print('Please Deposite amt to continue')
+#             print('')
+#             get_again_deposite=int(input("Again Deposition : "))
+#             game_balance+=get_again_deposite
+#             return main_slot_flow_game()
+#         else:
+#             print('')
+#             print('Your Slots are 🍇 🍉 🍌 🍎 🍐')
+#             print('')
+#             print('*************')
+#             print(f'Your Curresnt Balance is = {game_balance:.2f}')
+#             print('')
+#             Get_bet_amt=int(input('Enter the Bet AMT : '))
+#             print('*************')
+#             print('')
+#             print('Slotting.....')
+#             print('')
+#             slot_arr=['🍇','🍉','🍌','🍎','🍐']
+#             choice_one=random.choice(slot_arr)
+#             choice_two=random.choice(slot_arr)
+#             choice_three=random.choice(slot_arr)
+#             print(f'Your Slots are :{choice_one}|{choice_two}|{choice_three}')
+#             if choice_one==choice_two==choice_three:
+#                 game_balance+=Get_bet_amt
+#                 print('')
+#                 print('Hurray..... You Won the Game...')
+#                 print('')
+#                 print('******************')
+#                 print(f'You Earn the Profit of Rupees : {Get_bet_amt:.2f}')
+#                 print('******************')
+#                 print(f'Current Balance in your ACCOUNT is : {game_balance:.2f}')
+#                 print('------------------')
+#             else:
+#                 game_balance-=Get_bet_amt
+#                 print('*******************')
+#                 print('Sorry Your Luck Not Good by Now')
+#                 print('*******************')
+#                 print(f'The amount of rup={Get_bet_amt} is deducted from your account')
+#                 print('')
+#                 print(f'The Balance in your account is {game_balance:.2f}')
+#                 print('')
+
+#                 def user_response():
+#                     get_response_val=input('Want to try Again(y) or Quit(q) -- (y/q) : ').lower()
+#                     return get_response_val
+#                 get_response=user_response()
+#                 if get_response=='q':
+#                     print('(****************)')
+#                     sys.exit('ThanK You For Playing the Game')
+#                 elif get_response=='y':
+#                     return main_slot_flow_game()
+#                 else:
+#                     print('')
+#                     print('Enter Valid Data Input')
+#                     print('')
+#                     return user_response()  
+    
+#     main_slot_flow_game()
+
+# Slot_Game()
+
+
+
+# from cryptography.fernet import Fernet
+
+# key = Fernet.generate_key()
+
+# print(key)
+# main_key=Fernet(key)
+# print(main_key)
+
+# get_input_to_encrypt=input('Enter the text to encrypt : ')
+# encrytp=main_key.encrypt(b'{get_input_to_encrypt}')
+# print(encrytp)
+# decrytp=main_key.decrypt(b'{encrytp}')
+
+import sys
+
+def hangman_game():
+  
+    attempt=0
+    hang_man_obj={
+         1: """
+       -----
+       |   |
+       |   O
+       |
+       |
+       |
+    --------
+    """,
+
+    2: """
+       -----
+       |   |
+       |   O
+       |   |
+       |   |
+       |
+    --------
+    """,
+
+    3: """
+       -----
+       |   |
+       |   O
+       |  /|\\
+       |   |
+       |
+    --------
+    """,
+
+    4: """
+       -----
+       |   |
+       |   O
+       |  /|\\
+       |   |
+       |  / \\
+    --------
+    """
+    }
+    hang_man_img_arr=[]
+    words=['apple','mango','pinepple','grapes','banana','watermelon']
+    get_random_word=random.choice(words)
+    print(get_random_word)
+    print('****************')
+    print('')
+    print('Welcome to HangMan Game')
+    print('')
+    print('****************')
+    
+    display_word = ["_"] * len(get_random_word)
+   
+    print(" ".join(display_word)) 
+    def main_func():
+        nonlocal attempt
+        nonlocal hang_man_obj
+        nonlocal hang_man_img_arr
+        nonlocal display_word
+        def user_inp():   
+            print('')
+            get_user_inp=input('Find the Word to be filled : ').lower()
+            print('')
+            num_arr=['1','2','3','4','5','6','7','8','9','0']
+            if len(get_user_inp)>=2:
+                print('Please Enter One Word')
+                return user_inp()
+            elif get_user_inp in num_arr:
+                print('Please Enter Alphabets')
+                return user_inp()
+            return get_user_inp
+        get_user_val=user_inp()
+        if get_user_val in get_random_word:
+            for idx, letter in enumerate(get_random_word):
+                if letter == get_user_val:
+                    display_word[idx] = get_user_val                  
+            print(" ".join(display_word))
+            print('')
+            if "_" not in display_word: 
+                print('')
+                print("🎉 Congratulations! You guessed the word:", get_random_word)
+                print('')
+                get_inp_for_continue=input('Want to continue (y) or quit (q) : ').lower()
+                if get_inp_for_continue=='y':
+                    hangman_game()
+                else:
+                    print('')
+                    sys.exit("Thanks for Playing the Game")  
+            return main_func()
+        else:
+            attempt+=1
+            if attempt<=4:
+               
+                hang_man_img_arr.append(hang_man_obj[attempt])
+                for img_hang_man in hang_man_img_arr:
+                    print(img_hang_man)
+                
+                if attempt==4:
+                    sys.exit(f'You have reached your maximum of {attempt} attemps')
+                else:
+                    return main_func()
+                
+
+    main_func() 
+          
+
+hangman_game()
