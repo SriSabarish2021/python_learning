@@ -726,7 +726,8 @@ def hangman_game():
         if get_user_val in get_random_word:
             for idx, letter in enumerate(get_random_word):
                 if letter == get_user_val:
-                    display_word[idx] = get_user_val                  
+                   
+                    display_word[idx] = get_user_val
             print(" ".join(display_word))
             print('')
             if "_" not in display_word: 
@@ -757,4 +758,80 @@ def hangman_game():
     main_func() 
           
 
-hangman_game()
+# hangman_game()
+
+
+
+# class animal:
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+
+#     def eat(self):
+#         print(f'{self.name} eats')
+    
+#     def sleep(self):
+#         print(f"{self.name} is sleeping")
+
+
+# class Dog(animal):
+#     def __init__(self, name, age,bark):
+#         super().__init__(name, age)
+#         self.bark=bark
+    
+#     def sound(self):
+#         print(f"{self.name} sounds like {self.bark}")
+
+# class mouse(Dog):
+#     pass
+
+# dog=Dog('Chipppi',4,'vovvv')
+# mouse=mouse('Jerry',5,'ichhh')
+# print(dog.sound())
+# print(mouse.sound())
+
+
+
+
+
+class basic_info:
+    degree="MBA"
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+
+    def get_info(self):
+        print(f"{self.name} is {self.age} old and he is currently pursuing {self.degree}")
+
+
+student_one=basic_info("Sri Sabarish",15)
+
+
+class main_info(basic_info):
+    Clg="Vivekananda Institute of management studies"
+
+    def __init__(self, name, age,pan,aadhaar):
+        super().__init__(name, age)
+        self.pan=pan
+        self.aadhaar=aadhaar
+
+    def getter(self,clg):
+        self.Clg=clg
+    @staticmethod
+    def getdata():
+        print('helloo')
+    @classmethod
+    def get_clg(cls):
+        print(cls.Clg)
+
+    
+
+    def get_full_info(self):
+        print(f"{self.name} is {self.age} old and he is currently pursuing {self.degree} in {self.Clg} adn his pan number is {self.pan} and aadhaar number is {self.aadhaar}")
+
+
+student_two=main_info('sri sabarish',16,'239389****','1232 1221 1213')
+student_two.getter("TIPS")
+print(student_two.get_full_info())
+print(student_two.getdata())
+
