@@ -794,44 +794,88 @@ def hangman_game():
 
 
 
-class basic_info:
-    degree="MBA"
-    def __init__(self,name,age):
-        self.name=name
-        self.age=age
+# class basic_info:
+#     degree="MBA"
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
 
-    def get_info(self):
-        print(f"{self.name} is {self.age} old and he is currently pursuing {self.degree}")
-
-
-student_one=basic_info("Sri Sabarish",15)
+#     def get_info(self):
+#         print(f"{self.name} is {self.age} old and he is currently pursuing {self.degree}")
 
 
-class main_info(basic_info):
-    Clg="Vivekananda Institute of management studies"
+# student_one=basic_info("Sri Sabarish",15)
 
-    def __init__(self, name, age,pan,aadhaar):
-        super().__init__(name, age)
-        self.pan=pan
-        self.aadhaar=aadhaar
 
-    def getter(self,clg):
-        self.Clg=clg
-    @staticmethod
-    def getdata():
-        print('helloo')
-    @classmethod
-    def get_clg(cls):
-        print(cls.Clg)
+# class main_info(basic_info):
+#     Clg="Vivekananda Institute of management studies"
+
+#     def __init__(self, name, age,pan,aadhaar):
+#         super().__init__(name, age)
+#         self.pan=pan
+#         self.aadhaar=aadhaar
+
+#     def getter(self,clg):
+#         self.Clg=clg
+#     @staticmethod
+#     def getdata():
+#         print('helloo')
+#     @classmethod
+#     def get_clg(cls):
+#         print(cls.Clg)
 
     
 
-    def get_full_info(self):
-        print(f"{self.name} is {self.age} old and he is currently pursuing {self.degree} in {self.Clg} adn his pan number is {self.pan} and aadhaar number is {self.aadhaar}")
+#     def get_full_info(self):
+#         print(f"{self.name} is {self.age} old and he is currently pursuing {self.degree} in {self.Clg} adn his pan number is {self.pan} and aadhaar number is {self.aadhaar}")
 
 
-student_two=main_info('sri sabarish',16,'239389****','1232 1221 1213')
-student_two.getter("TIPS")
-print(student_two.get_full_info())
-print(student_two.getdata())
+# student_two=main_info('sri sabarish',16,'239389****','1232 1221 1213')
+# student_two.getter("TIPS")
+# print(student_two.get_full_info())
+# print(student_two.getdata())
 
+
+
+# import datetime
+# import time 
+# import pygame
+# def set_alarm(get_alarm_time):
+#     print(f"Alarm time is set on : {get_alarm_time}")
+
+#     sound_track="Wooden Train Whistle.mp3"
+#     is_running=True
+
+#     while is_running:
+#         loop_time=f"{datetime.datetime.now().time().hour:02}:{datetime.datetime.now().time().minute:02}:{datetime.datetime.now().time().second:02}"
+#         if str(get_alarm_time)==str(loop_time):
+#             print("heyyy")
+#             pygame.mixer.init()
+#             pygame.mixer.music.load(sound_track)
+#             pygame.mixer.music.play()
+#             while pygame.mixer.music.get_busy():
+#                 time.sleep(1)
+#             break
+#         else:
+#             print(loop_time)
+        
+
+#         time.sleep(1)
+
+        
+
+
+# alarm_time_get=input("Set your alarm time (HH:MM:SS) : ")
+
+# set_alarm(alarm_time_get)
+
+
+import requests
+get_url="https://pokeapi.co/api/v2/pokemon/pikachu"
+
+def get_data():
+    get_data=requests.get(get_url)
+    get_json=get_data.json()
+    print(get_json["name"])
+
+get_data()
