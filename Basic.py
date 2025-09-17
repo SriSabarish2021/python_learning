@@ -870,12 +870,86 @@ def hangman_game():
 # set_alarm(alarm_time_get)
 
 
-import requests
-get_url="https://pokeapi.co/api/v2/pokemon/pikachu"
+# import requests
+# get_url="https://pokeapi.co/api/v2/pokemon/pikachu"
 
-def get_data():
-    get_data=requests.get(get_url)
-    get_json=get_data.json()
-    print(get_json["name"])
+# def get_data():
+#     get_data=requests.get(get_url)
+#     get_json=get_data.json()
+#     print(get_json["name"])
 
-get_data()
+# get_data()
+
+
+
+# import sys
+
+# from PyQt5.QtWidgets import QMainWindow,QApplication,QLabel
+# from PyQt5.QtGui import QIcon,QFont
+# from PyQt5.QtCore import Qt
+# from PyQt5.QtGui import QPixmap
+# class MainWindow(QMainWindow):
+#     def __init__(self):
+#         super().__init__()
+#         self.setWindowTitle('My First GUI')
+#         self.setGeometry(600,100,800,800)
+#         self.setWindowIcon(QIcon("WhatsApp Image 2024-12-27 at 7.40.20 PM (1).jpeg"))
+#         lable=QLabel('Helloo',self)
+#         lable.setFont(QFont('Arial',30))
+#         lable.setGeometry(50,50,500,500)
+#         lable.setStyleSheet("color:blue;"
+#                             "background-color:green;"
+#                             "font-weight:bold")
+        
+#         lable.setAlignment(Qt.AlignTop)
+#         lable.setPixmap(QPixmap('WhatsApp Image 2024-12-27 at 7.40.20 PM (1).jpeg'))
+#         lable.setScaledContents(True) 
+    
+# def RunApp():
+    
+#     app=QApplication(sys.argv)
+#     Window=MainWindow()
+#     Window.show()
+#     sys.exit(app.exec_())
+
+
+
+# if __name__=="__main__":
+#     RunApp()
+
+
+import sys
+import time
+import datetime
+from PyQt5.QtWidgets import QApplication,QMainWindow,QLabel
+from PyQt5.QtCore import QTimer
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setStyleSheet("background-color:'black'")
+        self.setGeometry(150,100,450,400)
+        
+        self.lable=QLabel(self)
+        self.lable.setStyleSheet("color:white;" 
+        " font-size:40px;")
+        self.lable.setGeometry(30,10,250,140)
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.update_time)
+        self.timer.start(1000)  # 1000 ms = 1 second
+        self.update_time()  # Call immediately once
+
+    def update_time(self):
+        current_time =f"{datetime.datetime.now().time().hour:02}:{datetime.datetime.now().time().minute:02}:{datetime.datetime.now().time().second:02}"
+        self.lable.setText(current_time)
+
+
+def RunApp():
+    app=QApplication(sys.argv)
+    window=MainWindow()
+    window.show()
+    sys.exit(app.exec_())
+
+
+if __name__=="__main__":
+    RunApp()
